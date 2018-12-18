@@ -8,13 +8,14 @@ import { NgxuxMatHeaderNavModule }       from '@ngxux/ngxux-mat-header-nav';
 import { NgxuxMatTableModule }           from '@ngxux/ngxux-mat-table';
 import { NgxuxMatToolbarModule }         from '@ngxux/ngxux-mat-toolbar';
 import { NgxuxMatVerticalToolbarModule } from '@ngxux/ngxux-mat-vertical-toolbar';
+import { AuthGuard }                     from './_lib/AuthGuard';
 
-import { AppComponent }         from './app.component';
-import { HomeComponent }        from './home/home.component';
-import { SettingsComponent }    from './settings/settings.component';
-import { UsersSearchComponent } from './users/users-search/users-search.component';
-import { UsersComponent }       from './users/users.component';
-import { UsersModule }          from './users/users.module';
+import { AppComponent }      from './app.component';
+import { HomeComponent }     from './home/home.component';
+import { LoginModule }       from './login/login.module';
+import { SettingsComponent } from './settings/settings.component';
+import { UsersComponent }    from './users/users.component';
+import { UsersModule }       from './users/users.module';
 
 @NgModule({
 
@@ -44,6 +45,7 @@ import { UsersModule }          from './users/users.module';
         NgxuxMatToolbarModule,
         NgxuxMatVerticalToolbarModule,
 
+        LoginModule,
         UsersModule,
 
         RouterModule.forRoot([
@@ -51,34 +53,14 @@ import { UsersModule }          from './users/users.module';
             {
 
                 path: 'home',
-                component: HomeComponent
-
-            }, {
-
-                path: 'users',
-                component: UsersComponent,
-
-                children: [
-
-                    {
-
-                        path: 'search',
-                        component: UsersSearchComponent
-
-                    }, {
-
-                        path: '',
-                        pathMatch: 'full',
-                        redirectTo: 'search'
-
-                    }
-
-                ]
+                component: HomeComponent,
+                canActivate: [ AuthGuard ]
 
             }, {
 
                 path: 'settings',
-                component: SettingsComponent
+                component: SettingsComponent,
+                canActivate: [ AuthGuard ]
 
             }
 

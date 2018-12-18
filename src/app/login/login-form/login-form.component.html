@@ -1,0 +1,67 @@
+<div class="wrapper">
+
+    <form [formGroup]="formGroup" class="mat-elevation-z8">
+
+        <table>
+
+            <tr>
+
+                <td>
+
+                    <mat-form-field floatlabel="always">
+
+                        <input matInput
+                               autoFocus
+                               required
+                               placeholder="Username/Email"
+                               formControlName="username">
+
+                    </mat-form-field>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    <mat-form-field floatlabel="always">
+
+                        <input matInput
+                               required
+                               type="password"
+                               placeholder="Password"
+                               formControlName="password">
+
+                    </mat-form-field>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    <div class="buttons">
+
+                        <button mat-raised-button
+                                (click)="onLoginClick()"
+                                color="primary">
+
+                            Login
+
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>

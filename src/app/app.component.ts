@@ -1,5 +1,6 @@
 import { Component }                                                   from '@angular/core';
 import { NgxuxMatVerticalToolbarItem, NgxuxMatVerticalToolbarService } from '@ngxux/ngxux-mat-vertical-toolbar';
+import { AuthenticationService }                                       from './_lib/AuthenticationService';
 
 @Component({
 
@@ -10,7 +11,8 @@ import { NgxuxMatVerticalToolbarItem, NgxuxMatVerticalToolbarService } from '@ng
 })
 export class AppComponent {
 
-    public constructor(private ngxuxMatVerticalToolbarService: NgxuxMatVerticalToolbarService) {
+    public constructor(private ngxuxMatVerticalToolbarService: NgxuxMatVerticalToolbarService,
+                       public authenticationService: AuthenticationService) {
 
         ngxuxMatVerticalToolbarService.leftMenuItems = [
 
