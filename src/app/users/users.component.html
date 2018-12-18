@@ -1,0 +1,32 @@
+<div class="wrapper">
+
+    <ngxux-mat-header-nav title="Manage Accounts"
+                          (buttonClick)="onButtonClick($event)"
+                          [buttons]="[
+
+                                            {
+
+                                                label: 'Create User'
+
+                                            }
+
+                                        ]"
+
+                          [tabs]="[
+
+                                        {
+
+                                            label: 'Users',
+                                            path: '/users/search'
+
+                                        }
+
+                                        ]"></ngxux-mat-header-nav>
+
+    <div class="content">
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+</div>
