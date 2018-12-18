@@ -1,14 +1,14 @@
-import {HttpClient}  from '@angular/common/http';
-import {Injectable}  from '@angular/core';
-import {Observable}  from 'rxjs';
-import {environment} from '../../environments/environment';
-import {Pageable}    from './Pageable';
-import {PageRequest} from './PageRequest';
+import { HttpClient }  from '@angular/common/http';
+import { Injectable }  from '@angular/core';
+import { Observable }  from 'rxjs';
+import { environment } from '../../environments/environment';
+import { Pageable }    from './Pageable';
+import { PageRequest } from './PageRequest';
 
 @Injectable()
 export class APIClient<T> {
 
-    public static readonly BASE_URL: string = environment.API_BASE;
+    public static readonly BASE_URL: string = environment.BASE_URL;
 
     public constructor(private httpClient: HttpClient) {
 
